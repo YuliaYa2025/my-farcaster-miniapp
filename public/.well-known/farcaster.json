@@ -1,0 +1,29 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjExMDg3MzgsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg5QmRmRWMwN0VlMDNmNjBkMzIyQjFFNDVlRjcwNzAzMmZmOEM2MzRjIn0",
+    "payload": "eyJkb21haW4iOiJmYXJjYXN0ZXItbWluaWFwcC1zdGFydGVyLThhOGFnczAwcC15dWxpYS15YW5vY2hraW5hcy1wcm9qZWN0cy52ZXJjZWwuYXBwIn0",
+    "signature": "MHg1NThjNDI5OTM4YjJmNGI5YTUyN2EzZDEzZDBlMTMyMTcyYWY3YWJmODM3NzMxOGYzZDRmOTBhYjY3ZmE4NWY2N2Y1YWE4OTYwMGJkM2VmOWMzMDllNjI2MDNiMjI0OWNhNGY5OGVhYWIyYzAyZjc4NTUxNTQzYThlNzk4ZjBjZjFj"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "BA Survival Kit",
+    "iconUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/logo.png",
+    "homeUrl": "https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/",
+    "splashImageUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/splash.png",
+    "splashBackgroundColor": "#E6F3FF",
+    "webhookUrl": "https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/api/webhook",
+    "subtitle": "Your gamified Devconnect BA companion",
+    "description": "Explore, earn XP, and connect",
+    "primaryCategory": "games",
+    "heroImageUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/hero.png",
+    "tags": [
+      "social",
+      "devconnect",
+      "argentina"
+    ],
+    "tagline": "Explore, earn XP, and connect",
+    "ogTitle": "BA Survival Kit",
+    "ogDescription": "Your gamified Devconnect BA companion",
+    "ogImageUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/hero.png"
+  }
+} 
