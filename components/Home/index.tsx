@@ -1,13 +1,42 @@
 "use client";
 
+import { useMiniApp } from "@/contexts/miniapp-context";
 import { useUser } from "@/contexts/user-context";
+import { sdk } from "@farcaster/miniapp-sdk";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
 export default function Home() {
   const { user, isLoading, error, signIn } = useUser();
-
+  const { isMiniAppReady } = useMiniApp();
   const { address } = useAccount();
+  const [readyCalled, setReadyCalled] = useState(false);
+
+  // Call ready() as soon as possible while avoiding jitter and content reflows
+  useEffect(() => {
+    if (isMiniAppReady && !readyCalled) {
+      // Call ready immediately when SDK is ready, component has mounted, and content is ready
+      sdk.actions.ready().then(() => {
+        setReadyCalled(true);
+        console.log("Content ready - splash screen dismissed");
+      }).catch((err) => {
+        console.error("Error calling ready():", err);
+      });
+    }
+  }, [isMiniAppReady, readyCalled]); // Only depend on isMiniAppReady and readyCalled to prevent multiple calls
+
+  // Show loading state while MiniApp is initializing
+  if (!isMiniAppReady) {
+    return (
+      <div className="bg-white text-black flex min-h-screen flex-col items-center justify-center p-4">
+        <div className="text-center space-y-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto" />
+          <p className="text-lg text-muted-foreground">Loading Mini App...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white text-black flex min-h-screen flex-col items-center justify-center p-4">
