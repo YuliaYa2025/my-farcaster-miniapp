@@ -41,7 +41,7 @@ export function MiniAppProvider({
       } else {
         setError("Failed to load Farcaster context");
       }
-      await sdk.actions.ready();
+      // Don't call ready() here - let the Home component call it when UI is ready
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to initialize SDK");
       console.error("SDK initialization error:", err);

@@ -11,20 +11,20 @@ export default function Home() {
   const { user, isLoading, error, signIn } = useUser();
   const { isMiniAppReady } = useMiniApp();
   const { address } = useAccount();
-  const [readyCalled, setReadyCalled] = useState(false);
 
-  // Call ready() as soon as possible while avoiding jitter and content reflows
+  // Call ready() when both component mounts and SDK is ready
   useEffect(() => {
-    if (isMiniAppReady && !readyCalled) {
-      // Call ready immediately when SDK is ready, component has mounted, and content is ready
-      sdk.actions.ready().then(() => {
-        setReadyCalled(true);
-        console.log("Content ready - splash screen dismissed");
-      }).catch((err) => {
-        console.error("Error calling ready():", err);
-      });
+    if (isMiniAppReady) {
+      console.log('SDK ready, calling ready()');
+      sdk.actions.ready()
+        .then(() => {
+          console.log('ready() called successfully');
+        })
+        .catch((error) => {
+          console.error('Error calling ready():', error);
+        });
     }
-  }, [isMiniAppReady, readyCalled]); // Only depend on isMiniAppReady and readyCalled to prevent multiple calls
+  }, [isMiniAppReady]);
 
   // Show loading state while MiniApp is initializing
   if (!isMiniAppReady) {
