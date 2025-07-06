@@ -7,14 +7,14 @@ const appUrl = env.NEXT_PUBLIC_URL;
 // Updated embed format following the current Farcaster sharing guide
 const miniappEmbed = {
   version: "1", // Updated from "next" to "1"
-  imageUrl: `https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/images/feed.png`, // Clean filename for feed embed
+  imageUrl: `https://farcaster-miniapp-starter-48xlyquct-yulia-yanochkinas-projects.vercel.app/images/feed.png`, // Clean filename for feed embed
   button: {
     title: "🚀 Vamos!",
     action: {
       type: "launch_miniapp", // Updated from "launch_frame" to "launch_miniapp"
       name: "BA Survival Kit", // Updated to match manifest
       url: appUrl,
-      splashImageUrl: `https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/images/splash.png`, // Clean filename for splash screen
+      splashImageUrl: `https://farcaster-miniapp-starter-48xlyquct-yulia-yanochkinas-projects.vercel.app/images/splash.png`, // Clean filename for splash screen
       splashBackgroundColor: "#E6F3FF", // Updated to match manifest
     },
   },
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "Your gamified Devconnect companion - Explore, earn XP, and connect during Devconnect",
       images: [
         {
-          url: `https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/images/feed.png`,
+          url: `https://farcaster-miniapp-starter-48xlyquct-yulia-yanochkinas-projects.vercel.app/images/feed.png`,
           width: 1200,
           height: 630,
           alt: "BA Survival Kit"
