@@ -12,7 +12,7 @@
     "splashImageUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/splash.png",
     "splashBackgroundColor": "#E6F3FF",
     "webhookUrl": "https://farcaster-miniapp-starter-8a8ags00p-yulia-yanochkinas-projects.vercel.app/api/webhook",
-    "subtitle": "Your gamified Devconnect BA companion",
+    "subtitle": "Gamified Devconnect companion",
     "description": "Explore, earn XP, and connect",
     "primaryCategory": "games",
     "heroImageUrl": "https://raw.githubusercontent.com/YuliaYa2025/miniapp_images/main/hero.png",
