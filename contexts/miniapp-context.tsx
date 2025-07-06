@@ -52,8 +52,15 @@ export function MiniAppProvider({
 
   useEffect(() => {
     if (!isMiniAppReady) {
-      setMiniAppReady().then(() => {
+      setMiniAppReady().then(async () => {
         console.log("MiniApp loaded");
+        // Call ready() after context is loaded
+        try {
+          await sdk.actions.ready();
+          console.log("SDK ready() called from context");
+        } catch (error) {
+          console.error("Error calling ready() from context:", error);
+        }
       });
     }
   }, [isMiniAppReady, setMiniAppReady]);

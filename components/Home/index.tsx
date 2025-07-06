@@ -12,20 +12,6 @@ export default function Home() {
   const { isMiniAppReady } = useMiniApp();
   const { address } = useAccount();
 
-  // Call ready() when both component mounts and SDK is ready
-  useEffect(() => {
-    if (isMiniAppReady) {
-      console.log('SDK ready, calling ready()');
-      sdk.actions.ready()
-        .then(() => {
-          console.log('ready() called successfully');
-        })
-        .catch((error) => {
-          console.error('Error calling ready():', error);
-        });
-    }
-  }, [isMiniAppReady]);
-
   // Show loading state while MiniApp is initializing
   if (!isMiniAppReady) {
     return (
