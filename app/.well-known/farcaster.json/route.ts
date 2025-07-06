@@ -6,7 +6,7 @@ export async function GET(): Promise<NextResponse> {
   const hostedManifestId = '0197dcdb-60e3-ac6e-6ef2-6a508d09ba22'; // You'll get this from the Farcaster tool
   
   return NextResponse.redirect(
-    `https://api.farcaster.xyz/miniapps/hosted-manifest/${hostedManifestId}`,
+    `https://api.farcaster.xyz/miniapps/hosted-manifest/0197dcdb-60e3-ac6e-6ef2-6a508d09ba22`,
     { status: 302 }
   );
 }
