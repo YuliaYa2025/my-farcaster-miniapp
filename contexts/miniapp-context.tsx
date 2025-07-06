@@ -41,7 +41,14 @@ export function MiniAppProvider({
       } else {
         setError("Failed to load Farcaster context");
       }
-      // Don't call ready() here - let the Home component call it when UI is ready
+      
+      // Call ready() after context is loaded and before setting ready state
+      try {
+        await sdk.actions.ready();
+        console.log("SDK ready() called from context");
+      } catch (error) {
+        console.error("Error calling ready() from context:", error);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to initialize SDK");
       console.error("SDK initialization error:", err);
@@ -52,15 +59,8 @@ export function MiniAppProvider({
 
   useEffect(() => {
     if (!isMiniAppReady) {
-      setMiniAppReady().then(async () => {
+      setMiniAppReady().then(() => {
         console.log("MiniApp loaded");
-        // Call ready() after context is loaded
-        try {
-          await sdk.actions.ready();
-          console.log("SDK ready() called from context");
-        } catch (error) {
-          console.error("Error calling ready() from context:", error);
-        }
       });
     }
   }, [isMiniAppReady, setMiniAppReady]);
