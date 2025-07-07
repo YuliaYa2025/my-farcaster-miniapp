@@ -1,15 +1,18 @@
-# Farcaster Mini App Template
+# BA Survival Kit
 
-This is a [Next.js](https://nextjs.org) starter kit to boostrap your Farcaster Mini App
+Based on a Next.js Farcaster starter kit 
 
-- [Farcaster Mini Apps](https://miniapps.xyz)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Next.js](https://nextjs.org/docs)
-- [Neynar](https://neynar.com)
+| Component           | Purpose                                                              |
+| ------------------- | -------------------------------------------------------------------- |
+| `Home`              | Welcome screen: event overview, XP intro, and "Start Mission" button |
+| `Features`          | Active XP Missions list (or claimed progress)                        |
+| `Buttons`           | ["Claim +10XP", "Open Map 🗺️", "My XP 🧠"]                          |
 
-## Getting Started
 
-1. Install dependencies:
+
+Set up .md files for Claude
+
+Install dependencies:
 
 ```bash
 npm install
@@ -91,9 +94,3 @@ The app is wrapped with `MiniAppProvider` in `providers.tsx`, configured with:
 - `dynamic-image-example/[id]/page.tsx` show how to create a Mini App URL resolving to a custom preview image
 - `api/og/example/[id]/route.ts` shows how to generate a custom preview image
 
-## Learn More
-
-- [Farcaster Mini Apps](https://miniapps.xyz)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Neynar](https://neynar.com)
